@@ -17,18 +17,6 @@ const UserSchema = Schema({
     creation_date: { type: Date }
 });
 
-// UserSchema.path('email').validate(
-//     function(email) {
-//         var emailRegex = /^[a-z0-9._%+-]+@[a-z0-9-]+.+.[a-z]{2,4}$/;
-//         return emailRegex.test(email.text);
-//     }, 'El email no cumple con el formato correcto.');
-
-// UserSchema.path('phone_number').validate(
-//     function(phone_number) {
-//         const phoneRegex = /^[0-9]{10}$/;
-//         return phoneRegex.test(phone_number.text);
-//     }, 'El número telefónico no cumple con el formato correcto');
-
 UserSchema.methods.toJSON = function() {
     let user = this;
     let userObject = user.toObject();
